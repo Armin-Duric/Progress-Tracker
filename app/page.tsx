@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
 
 export default function Home() {
   return (
@@ -7,15 +9,15 @@ export default function Home() {
         Profile section
       </div>
       <nav className="flex w-full h-full border-2 col-span-5 row-span-1">
-        Navbar
+        <Navbar />
       </nav>
       <div className="w-full h-full flex border-2 col-span-4 row-span-6">
-        Greetings Section
+        <HomePage />
       </div>
-      <div className="flex w-full h-full border-2 col-span-1 row-span-6">
+      <div className="flex w-full h-full border-2 col-span-1 row-span-8">
         Learning Section
       </div>
-      <footer className="flex w-full h-full border-2 col-span-5 row-span-2">
+      <footer className="flex w-full h-full border-2 col-span-4 row-span-2">
         Footer
       </footer>
     </main>
