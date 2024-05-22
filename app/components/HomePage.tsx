@@ -4,31 +4,38 @@ import axios from "axios";
 import Image from "next/image";
 
 const HomePage = () => {
-  const URL = "https://zenquotes.io/api/image";
-  const [data, setData] = useState({});
+  interface Quote {
+    content: string;
+    author: string;
+  }
+
+  const URL = "https://api.quotable.io/quotes/random?tags=motivational";
+  const [data, setData] = useState<Quote[] | null>(null);
 
   const fetchData = async () => {
     try {
       const response = await axios.get(URL);
-      setData(response);
-      console.log(data);
+      setData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.error(`Error fetching data: ${error}`);
     }
   };
 
   useEffect(() => {
-    fetchData;
-  });
+    fetchData();
+  }, []);
 
   return (
     <div>
-      <img
+      {/* <Image
         src="https://zenquotes.io/api/image"
         alt="Image"
-        height={100}
-        width={100}
-      />
+        height={400}
+        width={400}
+      /> */}
+      <h1>{data ? data[0].content : "Loading..."}</h1>
+      <h2>{data ? `By: ${data[0].author}` : null}</h2>
     </div>
   );
 };
