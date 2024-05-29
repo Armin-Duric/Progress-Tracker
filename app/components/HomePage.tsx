@@ -27,13 +27,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      {/* <Image
-        src="https://zenquotes.io/api/image"
-        alt="Image"
-        height={400}
-        width={400}
-      /> */}
+    <div className="flex justify-center flex-col items-center m-4 p-10 w-full">
       <h1>{data ? data[0].content : "Loading..."}</h1>
       <h2>{data ? `By: ${data[0].author}` : null}</h2>
     </div>

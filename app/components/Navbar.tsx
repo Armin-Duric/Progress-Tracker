@@ -7,16 +7,30 @@ const Navbar = () => {
   return (
     <nav className="flex w-full justify-between items-center">
       <Link href="/">
-        <div className="flex flex-cols items-end p-2 mx-4 cursor-pointer w-fit">
-          <Image src={Logo} alt="Logo" className="mx-2" />
-          <Image src={LogoText} alt="DevPT" className="w-[90px] h-[30px]" />
+        <div className="flex flex-cols items-end mx-4 cursor-pointer w-fit">
+          <Image
+            src={Logo}
+            alt="Logo"
+            className=" md:w-[45px] md:h-[45px] w-[30px] h-[30ox]"
+          />
+          <Image
+            src={LogoText}
+            alt="DevPT"
+            className="md:w-[90px] md:h-[30px] w-[60px] h-[10ox]"
+          />
         </div>
       </Link>
-      <div className="p-2 mx-4">
+      <div className="mx-6 pr-16">
         <ol className="flex flex-cols gap-4">
-          <li>About</li>
-          <li>Login</li>
-          <li>Register</li>
+          <Link href="/about">
+            <li>About</li>
+          </Link>
+          <Link href="/login">
+            <li>Login</li>
+          </Link>
+          <Link href="/register">
+            <li>Register</li>
+          </Link>
         </ol>
       </div>
     </nav>
